@@ -1,16 +1,17 @@
+@import url('http://fonts.googleapis.com/css?family=Monda');
+
 @import "bootstrap";
-@import url('http://fonts.googleapis.com/css?family=Lucida Grande');
 
 body {
   padding: 3px;
-  font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+  font-family: "Monda", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
   font-size: 11pt;
   margin-bottom: 0px;
   margin-top: 3px;
 }
 
 th, td {
-  padding: 5px;
+  padding-left: 25px;
 }
 
 th {
@@ -19,8 +20,9 @@ th {
 
 td {
   font-size: 2em;
+  padding-bottom: 10px;
 }
 
 .btn {
-  min-width: 65px;
+  min-width: 60px;
 }

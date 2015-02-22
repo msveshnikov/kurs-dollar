@@ -12,18 +12,22 @@ class HomeController < ApplicationController
       @dollar=@rates.last.dollar.round(2)
       @euro=@rates.last.euro.round(2)
       @oil=@rates.last.oil
+      if params[:month].to_i>6
+        n=(params[:month].to_i/6).round
+        @rates = (n - 1).step(@rates.size - 1, n).map { |i| @rates[i] }
+      end
+
       f.xAxis(categories: @rates.map { |v| v.date.to_s[0..9] })
 
-      f.series(name: "Доллар", yAxis: 0, data: @rates.map { |v| v.dollar })
+      f.series(name: "Доллар", color: "#7cad31", yAxis: 0, data: @rates.map { |v| v.dollar })
       f.series(name: "Евро", yAxis: 0, data: @rates.map { |v| v.euro })
       f.series(name: "Нефть", yAxis: 0, data: @rates.map { |v| v.oil })
 
       f.yAxis [{ title: { text: "Курс доллара/евро", margin: 10 } }]
-      #{ title: { text: "Цена на нефть $/барр" }, opposite: true } ]
 
       f.legend(width: 320, floating: true,
                align: 'left', x: 0, y: 0, itemWidth: 80, borderWidth: 1)
-      f.chart({ width: mobile_device? ? 340 : 800, marginBottom: 120, defaultSeriesType: "line" })
+      f.chart({ marginBottom: 120, defaultSeriesType: "line" })
     end
   end
 end

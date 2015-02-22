@@ -1,28 +1,28 @@
 @import "bootstrap";
-@import url('http://fonts.googleapis.com/css?family=Lucida Grande');
 
 body {
-    padding: 3px;
-    font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
-    font-size: 14pt;
-    margin-bottom: 0px;
-    margin-top: 5px;
+  padding: 3px;
+  font-family:  "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+  font-size: 14pt;
+  margin-bottom: 0px;
+  margin-top: 5px;
 }
 
 table, th, td {
-    align-content: center;
-    border-collapse: collapse;
+  align-content: center;
 }
 
 th, td {
-    padding: 15px;
+  padding-left: 35px;
 }
 
 td {
-    font-size: 2em;
-    align-content: center;
+  font-size: 2em;
+  align-content: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .btn {
-    min-width: 100px;
+  min-width: 100px;
 }
