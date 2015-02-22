@@ -1,5 +1,5 @@
 set :application, 'Kurs-dollar'
-set :repo_url, 'file:///opt/git/Kurs-dollar.git'
+set :repo_url, 'file:///opt/git/Kurs.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
