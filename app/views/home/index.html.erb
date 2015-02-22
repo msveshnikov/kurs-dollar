@@ -1,0 +1,25 @@
+<%= image_tag "rates.png" %>
+
+<table>
+  <tr>
+    <th>Курс доллара</th>
+    <th>Курс евро</th>
+    <th>Цена на нефть</th>
+  </tr>
+
+  <tr>
+    <td> <%= @dollar %> </td>
+    <td> <%= @euro %> </td>
+    <td> <%= @oil %> </td>
+  </tr>
+</table>
+
+<br>
+<%= high_chart("some_id", @chart) %>
+
+<div class="btn-group">
+  <%= link_to 'Месяц', root_path(month: 1), class: "btn" %>
+  <%= link_to 'Квартал', root_path(month: 3), class: "btn" %>
+  <%= link_to 'Год', root_path(month: 12), class: "btn" %>
+  <%= link_to '5 лет', root_path(month: 60), class: "btn" %>
+</div>
