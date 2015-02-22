@@ -18,7 +18,7 @@ class HomeController < ApplicationController
       f.series(name: "Евро", yAxis: 0, data: @rates.map { |v| v.euro })
       f.series(name: "Нефть", yAxis: 0, data: @rates.map { |v| v.oil })
 
-      f.yAxis [{ title: { text: "Курс доллара/евро", margin: 20 } }]
+      f.yAxis [{ title: { text: "Курс доллара/евро", margin: 10 } }]
       #{ title: { text: "Цена на нефть $/барр" }, opposite: true } ]
 
       f.legend(width: 320, floating: true,
