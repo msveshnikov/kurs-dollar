@@ -54,7 +54,6 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.10.1)
-    ox (2.1.8)
     polyglot (0.3.5)
     rack (1.5.2)
     rack-test (0.6.3)
@@ -113,7 +112,6 @@ DEPENDENCIES
   bootstrap-sass (= 2.3.2.0)
   jquery-rails
   lazy_high_charts
-  ox
   rails (= 4.0.2)
   russian (~> 0.6.0)
   sass-rails (~> 4.0.0)

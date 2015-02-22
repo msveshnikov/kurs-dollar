@@ -4,25 +4,23 @@
 body {
   padding: 3px;
   font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
-  font-size: 14pt;
+  font-size: 11pt;
   margin-bottom: 0px;
-  margin-top: 10px;
-}
-
-table, th, td {
-  align-content: center;
-  border-collapse: collapse;
+  margin-top: 3px;
 }
 
 th, td {
-  padding: 15px;
+  padding: 5px;
+}
+
+th {
+  font-size: 1em;
 }
 
 td {
   font-size: 2em;
-  align-content: center;
 }
 
 .btn {
-  min-width: 100px;
+  min-width: 65px;
 }
