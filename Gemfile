@@ -3,12 +3,15 @@ source 'http://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-#gem 'ox'
+group :production do
+  gem 'ox', :require => false
+  gem 'whenever', :require => false
+end
+
 gem 'lazy_high_charts'
 
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'russian', '~> 0.6.0'
-
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

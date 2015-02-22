@@ -20,6 +20,8 @@ class Rate < ActiveRecord::Base
         val: c.series.y.nodes.first.split(';').map { |v| v.to_f }
     }
 
+    @last = Rate.find_by_sql('SELECT * FROM rates ORDER BY date desc LIMIT 1')
+
     j = 0 # exchange rate for current time
     k = 0
     oil_rate = oil[:val][0]
@@ -35,12 +37,14 @@ class Rate < ActiveRecord::Base
       end
       usd_rate=usd[:val][i]
 
-      @rate = Rate.new
-      @rate.date=Time.at(time).to_datetime
-      @rate.dollar=usd_rate
-      @rate.oil=oil_rate
-      @rate.euro=eur_rate
-      @rate.save!
+      if Time.at(time).to_datetime>@last
+        @rate = Rate.new
+        @rate.date=Time.at(time).to_datetime
+        @rate.dollar=usd_rate
+        @rate.oil=oil_rate
+        @rate.euro=eur_rate
+        @rate.save!
+      end
     end
   end
 end
