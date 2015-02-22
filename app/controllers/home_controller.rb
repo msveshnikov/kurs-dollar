@@ -1,5 +1,8 @@
 # encoding: utf-8
 class HomeController < ApplicationController
+  before_action :check_for_mobile
+
+
   def index
     @chart = LazyHighCharts::HighChart.new('graph') do |f|
       f.title(text: "Динамика курсов")

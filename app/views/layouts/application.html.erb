@@ -10,7 +10,32 @@
 </head>
 <body>
 
-<%= yield %>
+<%= link_to image_tag("top.jpg"), root_path %>
+
+<br><br>
+<aside class="span12">
+  <%= yield %>
+  <br><br>
+
+</aside>
+<aside class="span3">
+
+  <br>
+  <%= link_to "Мобильная версия", mobile: 1 %>
+  <br><br>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:300px;height:600px"
+       data-ad-client="ca-pub-1351673544337847"
+       data-ad-slot="2591225138"></ins>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</aside>
+
+
+<%= image_tag("footer.jpg") %>
 
 </body>
 </html>
+
