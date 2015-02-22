@@ -1,5 +1,4 @@
 @import "bootstrap";
-
 @import url('http://fonts.googleapis.com/css?family=Lucida Grande');
 
 body {
@@ -11,12 +10,15 @@ body {
 }
 
 table, th, td {
-    align: center;
+    align-content: center;
     border-collapse: collapse;
 }
-th,td {
+
+th, td {
     padding: 15px;
 }
+
 td {
-    font-size:2em;
-    align: center;}
+    font-size: 2em;
+    align-content: center;
+}

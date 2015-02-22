@@ -11,7 +11,9 @@ class HomeController < ApplicationController
       @oil=@rates.last.oil
       f.xAxis(categories: @rates.map { |v| v.date.to_s[0..9] })
       f.series(name: "Курс доллара", yAxis: 0, data: @rates.map { |v| v.dollar })
-      f.series(name: "Курс евро", yAxis: 0, data: @rates.map { |v| v.euro })
+      @e = @rates.map { |v| v.euro }
+      #@e.shift
+      f.series(name: "Курс евро", yAxis: 0, data: @e)
       f.series(name: "Цена на нефть", yAxis: 0, data: @rates.map { |v| v.oil })
 
       f.yAxis [{ title: { text: "Курс доллара/евро", margin: 30 } }]

@@ -19,6 +19,9 @@ class Rate < ActiveRecord::Base
         time: c.series.x.nodes.first.split(';').map { |v| v.to_i },
         val: c.series.y.nodes.first.split(';').map { |v| v.to_f }
     }
+    #usd=1424293200;1424379600;1424466000
+    #eur=1424293200;1424379600;1424466000
+    #oil=1424378700;1424465100;1424471400
 
     j = 0 # exchange rate for current time
     k = 0
@@ -29,7 +32,7 @@ class Rate < ActiveRecord::Base
         j+= 1
         oil_rate = oil[:val][j]
       end
-      while ((time > eur[:time][k+1]) rescue false)
+      while ((time >= eur[:time][k+1]) rescue false)
         k+= 1
         eur_rate = eur[:val][k]
       end
