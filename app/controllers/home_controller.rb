@@ -28,14 +28,12 @@ class HomeController < ApplicationController
 
       f.yAxis [{ title: { text: "Курс доллара/евро", margin: 10 } }]
 
-      f.legend(width: 320, floating: true,
-               align: 'left', x: 0, y: 0, itemWidth: 80, borderWidth: 1)
+      f.legend(floating: true, align: 'left', borderWidth: 0)
       f.chart({ marginBottom: 140, defaultSeriesType: "line" })
     end
   end
 
   def make_forecast(last)
-    #@forecast=@rates.clone
     @forecast = Marshal.load(Marshal.dump(@rates))
     n=@rates.size
     days=7

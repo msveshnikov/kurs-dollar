@@ -15,7 +15,10 @@
 <%= yield %>
 
 <br><br>
-<%= link_to "Полная версия", mobile: 0 unless android_device? %>
+<p>
+  <%= link_to "Полная версия", mobile: 0 unless android_device? %>
+</p>
+
 
 <% if !android_device? %>
     <div>

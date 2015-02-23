@@ -2,7 +2,7 @@
 
 body {
   padding: 3px;
-  font-family:  "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+  font-family: "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
   font-size: 14pt;
   margin-bottom: 0px;
   margin-top: 5px;
@@ -25,4 +25,12 @@ td {
 
 .btn {
   min-width: 100px;
+}
+
+.btn-group {
+  padding-left: 10px;
+}
+
+p {
+  padding-left: 10px;
 }

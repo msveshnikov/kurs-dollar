@@ -1,9 +1,8 @@
 @import url('http://fonts.googleapis.com/css?family=Monda');
-
 @import "bootstrap";
 
 body {
-  padding: 3px;
+  padding: 0px;
   font-family: "Monda", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
   font-size: 11pt;
   margin-bottom: 0px;
@@ -25,4 +24,12 @@ td {
 
 .btn {
   min-width: 60px;
+}
+
+.btn-group {
+  padding-left: 10px;
+}
+
+p {
+  padding-left: 10px;
 }
