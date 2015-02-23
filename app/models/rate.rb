@@ -1,6 +1,7 @@
 class Rate < ActiveRecord::Base
 
   def self.import
+    p "Start importing"
     a = Ox.parse Net::HTTP.get('news.yandex.ru', '/quotes/graph_1.xml')
     b = Ox.parse Net::HTTP.get('news.yandex.ru', '/quotes/graph_1006.xml')
     c = Ox.parse Net::HTTP.get('news.yandex.ru', '/quotes/graph_23.xml')
@@ -46,5 +47,6 @@ class Rate < ActiveRecord::Base
         @rate.save!
       end
     end
+    p "Stop importing"
   end
 end
