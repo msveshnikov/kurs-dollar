@@ -1,9 +1,10 @@
+@import url('http://fonts.googleapis.com/css?family=Monda');
 @import "bootstrap";
 
 body {
   padding: 3px;
-  font-family: "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
-  font-size: 14pt;
+  font-family: "Monda","Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+  font-size: 11pt;
   margin-bottom: 0px;
   margin-top: 5px;
 }
@@ -33,4 +34,17 @@ td {
 
 p {
   padding-left: 10px;
+}
+
+.top {
+  width: 100%;
+  background-color: #83b740;
+  line-height: 2;
+}
+
+.bottom {
+  width: 100%;
+  background-color: #000000;
+  color: white;
+  line-height: 2;
 }
