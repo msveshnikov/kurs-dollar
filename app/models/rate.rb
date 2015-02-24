@@ -32,7 +32,7 @@ class Rate < ActiveRecord::Base
     usd[:time].each_with_index do |time, i|
       while ((time > oil[:time][j+1]) rescue false)
         j+= 1
-        oil_rate = oil[:val][j]
+        oil_rate = oil[:val][j-1]
       end
       while ((time >= eur[:time][k+1]) rescue false)
         k+= 1
