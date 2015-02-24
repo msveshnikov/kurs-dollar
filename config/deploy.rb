@@ -33,4 +33,11 @@ namespace :deploy do
 
   after :publishing, :restart
 
+  after :restart, :x_bin_rails do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      within release_path do
+        execute :chmod, "u+x bin/rails"
+      end
+    end
+  end
 end
