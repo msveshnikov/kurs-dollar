@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   def index
     @chart = LazyHighCharts::HighChart.new('graph') do |f|
       params[:month]=1 if !params[:month]
-      @rates=Rate.where(date: params[:month].to_i.month.ago..Date.today)
+      @rates=Rate.where(date: params[:month].to_i.month.ago..Date.today+2.days)
       @dollar=@rates.last.dollar.round(2)
       @euro=@rates.last.euro.round(2)
       @oil=@rates.last.oil

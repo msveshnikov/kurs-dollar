@@ -3,10 +3,8 @@ source 'http://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-group :production do
-  gem 'ox', :require => false
-  gem 'whenever', :require => false
-end
+gem 'ox'
+gem 'whenever', :require => false
 
 gem 'lazy_high_charts'
 

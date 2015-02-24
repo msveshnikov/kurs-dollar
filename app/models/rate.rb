@@ -1,3 +1,5 @@
+require 'net/http'
+
 class Rate < ActiveRecord::Base
 
   def self.import
@@ -21,7 +23,7 @@ class Rate < ActiveRecord::Base
         val: c.series.y.nodes.first.split(';').map { |v| v.to_f }
     }
 
-    @last = Rate.find_by_sql('SELECT * FROM rates ORDER BY date desc LIMIT 1')
+    @last = Rate.find_by_sql('SELECT * FROM rates ORDER BY date desc LIMIT 1')[0]
 
     j = 0 # exchange rate for current time
     k = 0
@@ -38,7 +40,7 @@ class Rate < ActiveRecord::Base
       end
       usd_rate=usd[:val][i]
 
-      if Time.at(time).to_datetime>@last
+      if Time.at(time).to_datetime > @last.date
         @rate = Rate.new
         @rate.date=Time.at(time).to_datetime
         @rate.dollar=usd_rate
