@@ -6,9 +6,9 @@
 # Example:
 #
 # set :output, "/path/to/my/cron_log.log"
-set :output, 'log/whenever.log'
+set :output, '/home/ubuntu/whenever.log'
 #
- every 4.hours do
+ every 2.hours do
    runner "Rate.import"
  end
 

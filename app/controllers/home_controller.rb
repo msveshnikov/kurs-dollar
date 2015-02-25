@@ -18,7 +18,7 @@ class HomeController < ApplicationController
       f.xAxis(categories: @forecast.map { |v| v.date.to_s[0..9] })
 
       f.series(name: "Прогноз", dashStyle: 'dot', color: "#7cad31", marker: { radius: 1 }, yAxis: 0, data: @forecast.map { |v| v.dollar })
-      f.series(name: "Доллар", color: "#7cad31", yAxis: 0, data: @rates.map { |v| v.dollar.round(2) })
+      f.series(name: "Доллар", color: "#7cad31", marker: { symbol: 'circle' }, yAxis: 0, data: @rates.map { |v| v.dollar.round(2) })
 
       f.series(name: "Прогноз", dashStyle: 'dot', color: "#7CB5EC", marker: { radius: 1 }, yAxis: 0, data: @forecast.map { |v| v.euro })
       f.series(name: "Евро", color: "#7CB5EC", marker: { symbol: 'circle' }, yAxis: 0, data: @rates.map { |v| v.euro.round(2) })
