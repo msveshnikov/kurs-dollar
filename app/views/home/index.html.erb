@@ -1,4 +1,3 @@
-
 <table>
   <tr>
     <th>Курс доллара</th>
@@ -15,8 +14,8 @@
 
 <%= high_chart("some_id", @chart) %>
 <div class="btn-group">
-  <%= link_to 'Месяц', root_path(month: 1), class: "btn" %>
-  <%= link_to 'Квартал', root_path(month: 3), class: "btn" %>
-  <%= link_to 'Год', root_path(month: 12), class: "btn" %>
-  <%= link_to '5 лет', root_path(month: 60), class: "btn" %>
+  <%= link_to 'Месяц', root_path(month: 1), class: "btn "+(@month==1 ? "active" : "") %>
+  <%= link_to 'Квартал', root_path(month: 3), class: "btn "+(@month==3 ? "active" : "") %>
+  <%= link_to 'Год', root_path(month: 12), class: "btn "+(@month==12 ? "active" : "") %>
+  <%= link_to '5 лет', root_path(month: 60), class: "btn "+(@month==60 ? "active" : "") %>
 </div>
