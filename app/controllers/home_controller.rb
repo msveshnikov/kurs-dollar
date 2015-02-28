@@ -27,7 +27,13 @@ class HomeController < ApplicationController
       f.series(name: "Прогноз", dashStyle: 'dot', color: "#42042B", marker: { radius: 1 }, yAxis: 0, data: @forecast.map { |v| v.oil })
       f.series(name: "Нефть", color: "#42042B", marker: { symbol: 'circle' }, yAxis: 0, data: @rates.map { |v| v.oil })
 
-      f.yAxis [{ title: { text: "Курс доллара/евро", margin: 10 } }]
+      if params[:ecpm]=="1"
+        f.series(name: "eCPM", color: "#FF042B", marker: { symbol: 'circle' }, yAxis: 1, data: @rates.map { |v| v.ecpm ? v.ecpm.gsub(",", ".").to_f : 0 })
+        f.yAxis [{ title: { text: "Курс доллара/евро", margin: 10 } },
+                 { title: { text: "eCPM", margin: 10 }, :opposite => true }]
+      else
+        f.yAxis [{ title: { text: "Курс доллара/евро", margin: 10 } }]
+      end
 
       f.legend(floating: true, align: 'left', borderWidth: 0)
       f.chart({ marginBottom: 140, defaultSeriesType: "line" })
