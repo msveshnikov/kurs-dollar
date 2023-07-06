@@ -1,0 +1,4 @@
+{
+    "sqlite.sqlite3": "wsl sqlite3",
+    "git.ignoreLimitWarning": true
+}
